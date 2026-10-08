@@ -1,0 +1,16 @@
+workload,run,ops,ops_per_s,p50_us,p99_us,p999_us
+process_limit_order (resting),0,400000,5544146,0.089,0.827,1.380
+process_limit_order (resting),1,400000,5455088,0.090,0.867,1.481
+process_limit_order (resting),2,400000,5538072,0.089,0.846,1.454
+process_limit_order (resting),3,400000,5552013,0.089,0.846,1.446
+process_limit_order (resting),4,400000,5597550,0.088,0.854,1.463
+cancel-heavy (70% cancel),0,400000,12409973,0.053,0.160,0.330
+cancel-heavy (70% cancel),1,400000,12665276,0.052,0.184,0.430
+cancel-heavy (70% cancel),2,400000,12325657,0.053,0.211,0.402
+cancel-heavy (70% cancel),3,400000,12686138,0.053,0.150,0.373
+cancel-heavy (70% cancel),4,400000,12853277,0.052,0.158,0.330
+crossing-heavy (70% marketable),0,400000,4179679,0.119,0.804,4.414
+crossing-heavy (70% marketable),1,400000,4437083,0.117,0.745,3.804
+crossing-heavy (70% marketable),2,400000,4205984,0.117,0.809,4.285
+crossing-heavy (70% marketable),3,400000,4689904,0.115,0.633,3.682
+crossing-heavy (70% marketable),4,400000,4706479,0.112,0.635,3.538
