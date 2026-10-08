@@ -1,0 +1,54 @@
+{
+ "random": {
+  "mean": -16.26309999999994,
+  "sem": 2.8246167697077467,
+  "std": 19.973056721135883,
+  "mean_abs_final_inventory": 55.0,
+  "n": 50
+ },
+ "noop": {
+  "mean": 0.0,
+  "sem": 0.0,
+  "std": 0.0,
+  "mean_abs_final_inventory": 0.0,
+  "n": 50
+ },
+ "scripted_mm": {
+  "mean": 1.7772000000000117,
+  "sem": 0.22826703660409758,
+  "std": 1.6140916950411528,
+  "mean_abs_final_inventory": 2.74,
+  "n": 50
+ },
+ "ppo_seed0": {
+  "mean": -0.8947999999999593,
+  "sem": 0.6699149955214603,
+  "std": 4.737014361517802,
+  "mean_abs_final_inventory": 10.12,
+  "n": 50
+ },
+ "ppo_seed1": {
+  "mean": -0.14540000000011788,
+  "sem": 0.1970801059550698,
+  "std": 1.3935667935779315,
+  "mean_abs_final_inventory": 2.96,
+  "n": 50
+ },
+ "ppo_seed2": {
+  "mean": 0.0,
+  "sem": 0.0,
+  "std": 0.0,
+  "mean_abs_final_inventory": 0.0,
+  "n": 50
+ },
+ "ppo_all_seeds_pooled": {
+  "mean": -0.34673333333335904,
+  "sem": 0.23342045187327598,
+  "n": 150
+ },
+ "config": {
+  "total_timesteps": 1000000,
+  "eval_seeds": "10000..10049",
+  "curve_seeds": 20
+ }
+}

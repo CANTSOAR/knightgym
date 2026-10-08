@@ -1,9 +1,9 @@
 {
  "random": {
-  "mean": -23.006799999999675,
-  "sem": 3.7235761660653375,
-  "std": 26.329659572894062,
-  "mean_abs_final_inventory": 68.92,
+  "mean": -26.760099999999948,
+  "sem": 4.628721343449665,
+  "std": 32.730002501761646,
+  "mean_abs_final_inventory": 67.68,
   "n": 50
  },
  "noop": {
@@ -14,41 +14,42 @@
   "n": 50
  },
  "scripted_mm": {
-  "mean": 1.5747999999999955,
-  "sem": 0.30414865994596846,
-  "std": 2.1506557993659556,
-  "mean_abs_final_inventory": 2.58,
+  "mean": 1.7772000000000117,
+  "sem": 0.22826703660409758,
+  "std": 1.6140916950411528,
+  "mean_abs_final_inventory": 2.74,
   "n": 50
  },
  "ppo_seed0": {
-  "mean": 0.0,
-  "sem": 0.0,
-  "std": 0.0,
-  "mean_abs_final_inventory": 0.0,
+  "mean": 1.3262000000001717,
+  "sem": 0.605571134701535,
+  "std": 4.282034558382876,
+  "mean_abs_final_inventory": 10.16,
   "n": 50
  },
  "ppo_seed1": {
-  "mean": 0.0,
-  "sem": 0.0,
-  "std": 0.0,
-  "mean_abs_final_inventory": 0.0,
+  "mean": 2.688899999999994,
+  "sem": 0.5784305876195557,
+  "std": 4.090121909515073,
+  "mean_abs_final_inventory": 10.08,
   "n": 50
  },
  "ppo_seed2": {
-  "mean": 0.0,
-  "sem": 0.0,
-  "std": 0.0,
-  "mean_abs_final_inventory": 0.0,
+  "mean": 2.363300000000163,
+  "sem": 0.5753671163452305,
+  "std": 4.068459896394618,
+  "mean_abs_final_inventory": 9.64,
   "n": 50
  },
  "ppo_all_seeds_pooled": {
-  "mean": 0.0,
-  "sem": 0.0,
+  "mean": 2.126133333333443,
+  "sem": 0.3397518015869622,
   "n": 150
  },
  "config": {
-  "total_timesteps": 30000,
+  "total_timesteps": 2000000,
   "eval_seeds": "10000..10049",
   "curve_seeds": 20
- }
+ },
+ "note": "random baseline re-evaluated with a seeded action space after the PPO run (earlier unseeded value: -22.6)"
 }

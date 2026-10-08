@@ -23,6 +23,7 @@ def run_episode(env, act, seed):
 
 def evaluate(act, seeds=EVAL_SEEDS, **kw):
     env = make_env(**kw)
+    env.action_space.seed(0)  # makes the random-policy baseline reproducible
     res = [run_episode(env, act, s) for s in seeds]
     pnl = np.array([r[0] for r in res])
     return pnl, np.array([r[1] for r in res])

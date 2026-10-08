@@ -7,6 +7,7 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.env_util import make_vec_env
 from stable_baselines3.common.monitor import Monitor
+from stable_baselines3.common.vec_env import VecNormalize
 
 sys.path.insert(0, "scripts")
 from common import EVAL_SEEDS, evaluate, evaluate_mm, make_env, random_policy
@@ -46,7 +47,6 @@ if __name__ == "__main__":
     res = {}
     np.random.seed(0)
     from gymnasium.utils import seeding
-    env = make_env(); env.action_space.seed(0)
     res["random"] = summarize(*evaluate(lambda o, e: e.action_space.sample()))
     res["noop"] = summarize(*evaluate(lambda o, e: np.zeros(5, dtype=int)))
     res["scripted_mm"] = summarize(*evaluate_mm())
@@ -54,7 +54,8 @@ if __name__ == "__main__":
     rows, ppo_final = [], []
     for sd in SEEDS:
         venv = make_vec_env(lambda: Monitor(make_env()), n_envs=8, seed=sd)
-        model = PPO("MlpPolicy", venv, n_steps=256, batch_size=512, ent_coef=0.01, learning_rate=3e-4,
+        venv = VecNormalize(venv, norm_obs=False, norm_reward=True)  # v2: v1 (plain rewards) collapsed to do-nothing
+        model = PPO("MlpPolicy", venv, n_steps=256, batch_size=512, ent_coef=0.003, learning_rate=3e-4,
                     seed=sd, verbose=0, device="cpu", policy_kwargs=dict(net_arch=[128, 128]))
         cb = Curve(f"ppo_seed{sd}")
         model.learn(TOTAL, callback=cb)

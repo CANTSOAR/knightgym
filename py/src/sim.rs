@@ -616,18 +616,26 @@ impl Market {
     pub fn step(&mut self, actions: &[(usize, Action)]) -> StepOut {
         self.fills.clear();
         self.stp.clear();
-        let mut order: Vec<usize> = (0..actions.len()).collect();
+        // Agents act in a seeded random order; one agent's actions stay in submitted order
+        // (so e.g. cancel-then-requote is atomic from that agent's point of view).
+        let mut agents_order: Vec<usize> = vec![];
+        for (a, _) in actions {
+            if !agents_order.contains(a) {
+                agents_order.push(*a);
+            }
+        }
         if self.cfg.shuffle_actions {
-            for i in (1..order.len()).rev() {
+            for i in (1..agents_order.len()).rev() {
                 let j = self.shuf_rng.gen_range(0..=i);
-                order.swap(i, j);
+                agents_order.swap(i, j);
             }
         }
         let mut rejects = vec![];
-        for i in order {
-            let (agent, act) = &actions[i];
-            if *agent >= self.agents.len() || !self.apply_action(*agent, act) {
-                rejects.push(*agent);
+        for ag in agents_order {
+            for (agent, act) in actions.iter().filter(|(a, _)| *a == ag) {
+                if *agent >= self.agents.len() || !self.apply_action(*agent, act) {
+                    rejects.push(*agent);
+                }
             }
         }
         self.background(0);
