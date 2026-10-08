@@ -1,0 +1,1 @@
+{'random': {'mean': -24.987099999999774, 'sem': 4.272229003096358, 'std': 30.209220988712786, 'mean_abs_final_inventory': 60.82, 'n': 50}, 'noop': {'mean': 0.0, 'sem': 0.0, 'std': 0.0, 'mean_abs_final_inventory': 0.0, 'n': 50}, 'scripted_mm': {'mean': 1.8827000000002228, 'sem': 0.2463389157818453, 'std': 1.7418791781948466, 'mean_abs_final_inventory': 2.38, 'n': 50}}

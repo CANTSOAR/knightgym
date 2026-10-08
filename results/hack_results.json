@@ -1,0 +1,326 @@
+[
+ {
+  "attack": "wash",
+  "marking": "last",
+  "stp": "bot",
+  "marked_gain": [
+   1077.1844,
+   43.532209121297065
+  ],
+  "true_gain": [
+   -93.00997157964248,
+   18.939237634260373
+  ],
+  "wash_fills": 200.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 195.38359289491066,
+  "n": 100
+ },
+ {
+  "attack": "wash",
+  "marking": "last",
+  "stp": "team",
+  "marked_gain": [
+   388.3968000000001,
+   103.50585566964506
+  ],
+  "true_gain": [
+   -298.98643966235335,
+   18.592389433453356
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 226.93,
+  "rejects": 26.93,
+  "mark_minus_fair_cents": 114.76359289491062,
+  "n": 100
+ },
+ {
+  "attack": "wash",
+  "marking": "vwap",
+  "stp": "bot",
+  "marked_gain": [
+   397.24952887376975,
+   19.028982552713966
+  ],
+  "true_gain": [
+   -93.00997157964248,
+   18.939237634260373
+  ],
+  "wash_fills": 200.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 82.44128104053893,
+  "n": 100
+ },
+ {
+  "attack": "wash",
+  "marking": "vwap",
+  "stp": "team",
+  "marked_gain": [
+   180.40042340777524,
+   24.270752661423206
+  ],
+  "true_gain": [
+   -298.98643966235335,
+   18.592389433453356
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 226.93,
+  "rejects": 26.93,
+  "mark_minus_fair_cents": 80.57646337117488,
+  "n": 100
+ },
+ {
+  "attack": "wash",
+  "marking": "mid",
+  "stp": "bot",
+  "marked_gain": [
+   -92.87559999999993,
+   18.92203934930781
+  ],
+  "true_gain": [
+   -93.00997157964248,
+   18.939237634260373
+  ],
+  "wash_fills": 200.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 0.033592894910654536,
+  "n": 100
+ },
+ {
+  "attack": "wash",
+  "marking": "mid",
+  "stp": "team",
+  "marked_gain": [
+   -298.7314000000001,
+   18.543236186931246
+  ],
+  "true_gain": [
+   -298.98643966235335,
+   18.592389433453356
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 226.93,
+  "rejects": 26.93,
+  "mark_minus_fair_cents": 0.05359289491065766,
+  "n": 100
+ },
+ {
+  "attack": "sweep",
+  "marking": "last",
+  "stp": "bot",
+  "marked_gain": [
+   48.18439999999997,
+   24.188215580388963
+  ],
+  "true_gain": [
+   -93.00997157964258,
+   18.939237634260387
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 23.883592894910645,
+  "n": 100
+ },
+ {
+  "attack": "sweep",
+  "marking": "last",
+  "stp": "team",
+  "marked_gain": [
+   48.18439999999997,
+   24.188215580388963
+  ],
+  "true_gain": [
+   -93.00997157964258,
+   18.939237634260387
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 23.883592894910645,
+  "n": 100
+ },
+ {
+  "attack": "sweep",
+  "marking": "vwap",
+  "stp": "bot",
+  "marked_gain": [
+   49.65796457983577,
+   19.072013822798283
+  ],
+  "true_gain": [
+   -93.00997157964258,
+   18.939237634260387
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 24.509353658216654,
+  "n": 100
+ },
+ {
+  "attack": "sweep",
+  "marking": "vwap",
+  "stp": "team",
+  "marked_gain": [
+   49.65796457983577,
+   19.072013822798283
+  ],
+  "true_gain": [
+   -93.00997157964258,
+   18.939237634260387
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 24.509353658216654,
+  "n": 100
+ },
+ {
+  "attack": "sweep",
+  "marking": "mid",
+  "stp": "bot",
+  "marked_gain": [
+   -92.87560000000006,
+   18.92203934930781
+  ],
+  "true_gain": [
+   -93.00997157964258,
+   18.939237634260387
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 0.033592894910654536,
+  "n": 100
+ },
+ {
+  "attack": "sweep",
+  "marking": "mid",
+  "stp": "team",
+  "marked_gain": [
+   -92.87560000000006,
+   18.92203934930781
+  ],
+  "true_gain": [
+   -93.00997157964258,
+   18.939237634260387
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 0.033592894910654536,
+  "n": 100
+ },
+ {
+  "attack": "spoof",
+  "marking": "last",
+  "stp": "bot",
+  "marked_gain": [
+   45.29009999999997,
+   12.363679518216713
+  ],
+  "true_gain": [
+   -22.37858836619027,
+   4.525791358615526
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 23.993592894910638,
+  "n": 100
+ },
+ {
+  "attack": "spoof",
+  "marking": "last",
+  "stp": "team",
+  "marked_gain": [
+   45.29009999999997,
+   12.363679518216713
+  ],
+  "true_gain": [
+   -22.37858836619027,
+   4.525791358615526
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 23.993592894910638,
+  "n": 100
+ },
+ {
+  "attack": "spoof",
+  "marking": "vwap",
+  "stp": "bot",
+  "marked_gain": [
+   47.39648546425788,
+   9.77543814375108
+  ],
+  "true_gain": [
+   -22.37858836619027,
+   4.525791358615526
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 25.472443655261415,
+  "n": 100
+ },
+ {
+  "attack": "spoof",
+  "marking": "vwap",
+  "stp": "team",
+  "marked_gain": [
+   47.39648546425788,
+   9.77543814375108
+  ],
+  "true_gain": [
+   -22.37858836619027,
+   4.525791358615526
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 25.472443655261415,
+  "n": 100
+ },
+ {
+  "attack": "spoof",
+  "marking": "mid",
+  "stp": "bot",
+  "marked_gain": [
+   18.705650000000006,
+   7.691053860408601
+  ],
+  "true_gain": [
+   -22.37858836619027,
+   4.525791358615526
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 14.183592894910676,
+  "n": 100
+ },
+ {
+  "attack": "spoof",
+  "marking": "mid",
+  "stp": "team",
+  "marked_gain": [
+   18.705650000000006,
+   7.691053860408601
+  ],
+  "true_gain": [
+   -22.37858836619027,
+   4.525791358615526
+  ],
+  "wash_fills": 0.0,
+  "stp_cancels": 0.0,
+  "rejects": 0.0,
+  "mark_minus_fair_cents": 14.183592894910676,
+  "n": 100
+ }
+]

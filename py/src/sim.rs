@@ -34,6 +34,8 @@ pub enum MarkRule {
     Last,
     Mid,
     Vwap,
+    /// Oracle: the latent fair value. Not observable by agents; used to measure true wealth.
+    Fair,
 }
 
 impl MarkRule {
@@ -42,6 +44,7 @@ impl MarkRule {
             MarkRule::Last => 0,
             MarkRule::Mid => 1,
             MarkRule::Vwap => 2,
+            MarkRule::Fair => 3,
         }
     }
     pub fn parse(s: &str) -> Option<Self> {
@@ -49,6 +52,7 @@ impl MarkRule {
             "last" => Some(Self::Last),
             "mid" => Some(Self::Mid),
             "vwap" => Some(Self::Vwap),
+            "fair" => Some(Self::Fair),
             _ => None,
         }
     }
@@ -198,6 +202,9 @@ pub struct Market {
     orders: HashMap<Uuid, OrderInfo>,
     pub t: u64,
     rng: ChaCha8Rng,
+    /// Separate stream for action-order shuffling so background randomness does not
+    /// depend on how many actions agents submit (keeps counterfactual runs paired).
+    shuf_rng: ChaCha8Rng,
     next_id: u128,
     team_of: Vec<i64>,
     // fills / stp events collected during the current step
@@ -231,6 +238,7 @@ impl Market {
             orders: HashMap::new(),
             t: 0,
             rng: ChaCha8Rng::seed_from_u64(0),
+            shuf_rng: ChaCha8Rng::seed_from_u64(0),
             next_id: 1,
             team_of,
             fills: vec![],
@@ -249,6 +257,7 @@ impl Market {
 
     pub fn reset(&mut self, seed: u64) {
         self.rng = ChaCha8Rng::seed_from_u64(seed);
+        self.shuf_rng = ChaCha8Rng::seed_from_u64(seed ^ 0x9E37_79B9_7F4A_7C15);
         self.t = 0;
         self.next_id = 1;
         self.orders.clear();
@@ -588,6 +597,7 @@ impl Market {
             MarkRule::Last => a.last_trade,
             MarkRule::Mid => a.last_mid,
             MarkRule::Vwap => a.last_vwap,
+            MarkRule::Fair => a.fair_cents * TICKS_PER_CENT as f64,
         }
     }
 
@@ -609,7 +619,7 @@ impl Market {
         let mut order: Vec<usize> = (0..actions.len()).collect();
         if self.cfg.shuffle_actions {
             for i in (1..order.len()).rev() {
-                let j = self.rng.gen_range(0..=i);
+                let j = self.shuf_rng.gen_range(0..=i);
                 order.swap(i, j);
             }
         }

@@ -5,8 +5,10 @@
 
 - M2 PyO3 (maturin) + Gymnasium env + PettingZoo parallel env: DONE. cargo test 14 pass (core 9+1, sim 4), pytest 14 pass. ~84k random-policy steps/s end-to-end from Python. Build: `source .venv/bin/activate && maturin develop --release`.
 
+- M4 reward-hack suite: exploit VERIFIED. Wash trading under last-trade marking + bot-level STP: +$1077/episode marked (±44 95% CI, 100 paired seeds) while true (fair-value) equity falls $93. Patch (team STP + mid marking): marked -$299 ≈ true -$299. Residuals documented: team STP alone still leaves +$388 (house picks off teammate's leftover bid at the print price); sweep-pump +$48 under last/vwap; quote spoofing +$19 under mid (bounded by half-spread). results/hack_results.md, hack_before_after.png, tests/test_hacks.py.
+
 ## In progress
-- M3 baselines (random, scripted MM, PPO)
+- M3 baselines: PPO 3 seeds x 1M steps running in background (results/baselines.log). Random -25 ±4, noop 0, scripted MM +1.9 ±0.25 per episode (mid marking).
 
 ## Blocked
 - none

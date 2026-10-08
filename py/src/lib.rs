@@ -99,14 +99,14 @@ impl PyMarket {
             .collect()
     }
 
-    /// Mark price in dollars per asset under "last" | "mid" | "vwap".
+    /// Mark price in dollars per asset under "last" | "mid" | "vwap" | "fair".
     fn marks(&self, rule: &str) -> PyResult<Vec<f64>> {
-        let r = MarkRule::parse(rule).ok_or_else(|| PyValueError::new_err("rule must be last|mid|vwap"))?;
+        let r = MarkRule::parse(rule).ok_or_else(|| PyValueError::new_err("rule must be last|mid|vwap|fair"))?;
         Ok((0..self.inner.n_assets()).map(|k| self.inner.mark(k, r) / 10_000.0).collect())
     }
 
     fn equity(&self, agent: usize, rule: &str) -> PyResult<f64> {
-        let r = MarkRule::parse(rule).ok_or_else(|| PyValueError::new_err("rule must be last|mid|vwap"))?;
+        let r = MarkRule::parse(rule).ok_or_else(|| PyValueError::new_err("rule must be last|mid|vwap|fair"))?;
         Ok(self.inner.equity(agent, r))
     }
 
