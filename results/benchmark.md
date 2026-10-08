@@ -1,6 +1,6 @@
 # Matching-core benchmark
 
-CPU: Intel Core i12950HX (12th Gen Intel(R) Core(TM) i9-12950HX), single thread, shared Linux box (load avg ~2 from other services; run under `nice -n 10`). rustc 1.95.0, release profile.
+CPU: 12th Gen Intel(R) Core(TM) i9-12950HX, single thread, shared Linux box (load avg ~2 from other services; run under `nice -n 10`). rustc 1.95.0, release profile.
 
 Code under test: `core/src/matching.rs`, an unmodified copy of the Rutgers competition exchange's price-time order book (BTreeMap levels + slab arena + intrusive FIFO lists, i64 fixed-point). Note it calls `SystemTime::now()` once per fill and clones the symbol string per trade; both are left in, so numbers include them.
 
